@@ -6,7 +6,7 @@ const getToken = () => localStorage.getItem('jwtToken');
 export const baseApi = createApi({
   reducerPath: 'baseApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api.secure-user-data.com/v1/',
+    baseUrl: 'http://localhost:3001/',
     prepareHeaders: (headers, { getState }) => {
       const token = getToken();
       

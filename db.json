@@ -1,0 +1,254 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ahmet",
+      "surname": "Yılmaz",
+      "email": "ahmet.yilmaz@corp.com",
+      "profession": "Yönetici",
+      "createdAt": "2024-05-15T10:30:00Z",
+      "role": "ADMIN",
+      "tcknPrefix": "123"
+    },
+    {
+      "id": 2,
+      "name": "Ayşe",
+      "surname": "Demir",
+      "email": "ayse.demir@corp.com",
+      "profession": "Geliştirici",
+      "createdAt": "2023-11-20T14:45:00Z",
+      "role": "USER",
+      "tcknPrefix": "456"
+    },
+    {
+      "id": 3,
+      "name": "Mehmet",
+      "surname": "Kara",
+      "email": "mehmet.kara@corp.com",
+      "profession": "Tasarımcı",
+      "createdAt": "2024-01-05T09:00:00Z",
+      "role": "USER",
+      "tcknPrefix": "789"
+    },
+    {
+      "id": 4,
+      "name": "Zeynep",
+      "surname": "Öztürk",
+      "email": "zeynep.ozturk@corp.com",
+      "profession": "Analist",
+      "createdAt": "2024-04-01T11:00:00Z",
+      "role": "ADMIN",
+      "tcknPrefix": "111"
+    },
+    {
+      "id": 5,
+      "name": "Ali",
+      "surname": "Koç",
+      "email": "ali.koc@corp.com",
+      "profession": "Geliştirici",
+      "createdAt": "2023-08-01T16:20:00Z",
+      "role": "USER",
+      "tcknPrefix": "222"
+    },
+    {
+      "id": 6,
+      "name": "Elif",
+      "surname": "Şahin",
+      "email": "elif.sahin@corp.com",
+      "profession": "Yönetici",
+      "createdAt": "2024-03-10T13:10:00Z",
+      "role": "ADMIN",
+      "tcknPrefix": "333"
+    },
+    {
+      "id": 7,
+      "name": "Mustafa",
+      "surname": "Çelik",
+      "email": "mustafa.celik@corp.com",
+      "profession": "Tasarımcı",
+      "createdAt": "2023-12-05T07:50:00Z",
+      "role": "USER",
+      "tcknPrefix": "444"
+    },
+    {
+      "id": 8,
+      "name": "Deniz",
+      "surname": "Yıldız",
+      "email": "deniz.yildiz@corp.com",
+      "profession": "Analist",
+      "createdAt": "2024-05-25T17:05:00Z",
+      "role": "USER",
+      "tcknPrefix": "555"
+    },
+    {
+      "id": 9,
+      "name": "Furkan",
+      "surname": "Aydın",
+      "email": "furkan.aydin@corp.com",
+      "profession": "Geliştirici",
+      "createdAt": "2024-02-18T12:00:00Z",
+      "role": "USER",
+      "tcknPrefix": "666"
+    },
+    {
+      "id": 10,
+      "name": "Gizem",
+      "surname": "Polat",
+      "email": "gizem.polat@corp.com",
+      "profession": "Yönetici",
+      "createdAt": "2023-09-01T15:30:00Z",
+      "role": "ADMIN",
+      "tcknPrefix": "777"
+    },
+    {
+      "id": 11,
+      "name": "Hasan",
+      "surname": "Eroğlu",
+      "email": "hasan.eroglu@corp.com",
+      "profession": "Analist",
+      "createdAt": "2024-01-22T08:40:00Z",
+      "role": "USER",
+      "tcknPrefix": "888"
+    },
+    {
+      "id": 12,
+      "name": "İrem",
+      "surname": "Güneş",
+      "email": "irem.gunes@corp.com",
+      "profession": "Tasarımcı",
+      "createdAt": "2024-04-12T10:20:00Z",
+      "role": "USER",
+      "tcknPrefix": "999"
+    },
+    {
+      "id": 13,
+      "name": "Koray",
+      "surname": "Kurt",
+      "email": "koray.kurt@corp.com",
+      "profession": "Geliştirici",
+      "createdAt": "2023-10-01T11:55:00Z",
+      "role": "USER",
+      "tcknPrefix": "101"
+    },
+    {
+      "id": 14,
+      "name": "Leyla",
+      "surname": "Aksoy",
+      "email": "leyla.aksoy@corp.com",
+      "profession": "Yönetici",
+      "createdAt": "2024-05-01T18:00:00Z",
+      "role": "ADMIN",
+      "tcknPrefix": "102"
+    },
+    {
+      "id": 15,
+      "name": "Mert",
+      "surname": "Tunç",
+      "email": "mert.tunc@corp.com",
+      "profession": "Analist",
+      "createdAt": "2023-07-15T13:00:00Z",
+      "role": "USER",
+      "tcknPrefix": "103"
+    },
+    {
+      "id": 16,
+      "name": "Nehir",
+      "surname": "Uçar",
+      "email": "nehir.ucar@corp.com",
+      "profession": "Tasarımcı",
+      "createdAt": "2024-03-22T09:30:00Z",
+      "role": "USER",
+      "tcknPrefix": "104"
+    },
+    {
+      "id": 17,
+      "name": "Okan",
+      "surname": "Bayrak",
+      "email": "okan.bayrak@corp.com",
+      "profession": "Geliştirici",
+      "createdAt": "2024-06-01T16:50:00Z",
+      "role": "ADMIN",
+      "tcknPrefix": "105"
+    },
+    {
+      "id": 18,
+      "name": "Pelin",
+      "surname": "Durmaz",
+      "email": "pelin.durmaz@corp.com",
+      "profession": "Analist",
+      "createdAt": "2023-11-05T14:10:00Z",
+      "role": "USER",
+      "tcknPrefix": "106"
+    },
+    {
+      "id": 19,
+      "name": "Ramazan",
+      "surname": "Şen",
+      "email": "ramazan.sen@corp.com",
+      "profession": "Yönetici",
+      "createdAt": "2024-02-01T08:00:00Z",
+      "role": "ADMIN",
+      "tcknPrefix": "107"
+    },
+    {
+      "id": 20,
+      "name": "Selin",
+      "surname": "Tok",
+      "email": "selin.tok@corp.com",
+      "profession": "Geliştirici",
+      "createdAt": "2023-10-25T12:05:00Z",
+      "role": "USER",
+      "tcknPrefix": "108"
+    },
+    {
+      "id": 21,
+      "name": "Tugay",
+      "surname": "Taş",
+      "email": "tugay.tas@corp.com",
+      "profession": "Tasarımcı",
+      "createdAt": "2024-01-10T17:35:00Z",
+      "role": "USER",
+      "tcknPrefix": "109"
+    },
+    {
+      "id": 22,
+      "name": "Umut",
+      "surname": "Akın",
+      "email": "umut.akin@corp.com",
+      "profession": "Yönetici",
+      "createdAt": "2024-04-18T10:50:00Z",
+      "role": "USER",
+      "tcknPrefix": "110"
+    },
+    {
+      "id": 23,
+      "name": "Vildan",
+      "surname": "Ece",
+      "email": "vildan.ece@corp.com",
+      "profession": "Analist",
+      "createdAt": "2023-12-01T14:00:00Z",
+      "role": "ADMIN",
+      "tcknPrefix": "112"
+    },
+    {
+      "id": 24,
+      "name": "Yağız",
+      "surname": "Fırat",
+      "email": "yagiz.firat@corp.com",
+      "profession": "Geliştirici",
+      "createdAt": "2024-05-08T09:20:00Z",
+      "role": "USER",
+      "tcknPrefix": "113"
+    },
+    {
+      "id": 25,
+      "name": "Pınar",
+      "surname": "Gümüş",
+      "email": "pinar.gumus@corp.com",
+      "profession": "Tasarımcı",
+      "createdAt": "2023-09-15T11:40:00Z",
+      "role": "ADMIN",
+      "tcknPrefix": "114"
+    }
+  ]
+}
