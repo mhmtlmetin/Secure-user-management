@@ -18,6 +18,15 @@ export interface UsersResult {
     totalCount: number;
 }
 
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface AuthResponse {
+  accessToken: string; // Sunucudan gelen JWT
+  user: User; // Oturum açan kullanıcının bilgileri
+}
 
 // --- Yardımcı Fonksiyon: Sorgu Parametrelerini Dönüştürme ---
 
@@ -60,6 +69,14 @@ const transformFilterParams = (params: FilterState): string => {
 
 export const userApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
+    login: builder.mutation<AuthResponse, LoginRequest>({
+      query: (credentials) => ({
+        url: 'users', // Varsayımsal bir login endpoint'i
+        method: 'POST',
+        body: credentials,
+      }),
+      invalidatesTags: ['Auth'], // Opsiyonel: Oturum açıldığında yetkiyle ilgili önbellekleri geçersiz kıl
+    }),
     // Query tipi artık UsersResult'tır.
     getUsers: builder.query<UsersResult, FilterState>({
       query: (params) => {
@@ -99,4 +116,4 @@ export const userApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetUsersQuery } = userApi;
+export const { useGetUsersQuery, useLoginMutation } = userApi;
