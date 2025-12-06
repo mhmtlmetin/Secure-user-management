@@ -1,8 +1,12 @@
 import React from 'react';
 import { 
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow, 
-  Paper, TableSortLabel, TablePagination, CircularProgress, Box, Button
+  Paper, TableSortLabel, TablePagination, CircularProgress, Box, Button,
+  IconButton
 } from '@mui/material';
+
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 interface User {
   id: number;
@@ -24,6 +28,8 @@ interface UserDataTableProps {
   isLoading: boolean;
   onPageChange: (newPage: number) => void;
   onSortChange: (newSort: string) => void;
+  onEdit: (userId: number) => void;
+  onDelete: (userId: number) => void;
 }
 
 
@@ -45,6 +51,8 @@ const UserDataTable: React.FC<UserDataTableProps> = ({
   isLoading,
   onPageChange,
   onSortChange,
+  onEdit,
+  onDelete,
 }) => {
   // Mevcut sıralama yönünü ('asc' veya 'desc') ve alanını ('name', 'createdAt' vb.) çıkarır
   const [sortField, sortDirection] = currentSort.split(':');
@@ -118,6 +126,27 @@ const UserDataTable: React.FC<UserDataTableProps> = ({
                   <TableCell>{new Date(user.createdAt).toLocaleDateString()}</TableCell>
                   <TableCell>
                     <Button size="small">Detay</Button>
+                  </TableCell>
+                  <TableCell align="center">
+                    {/* Güncelle Butonu */}
+                    <IconButton 
+                      size="small" 
+                      color="primary" 
+                      onClick={() => onEdit(user.id)}
+                      aria-label={`Kullanıcı ${user.name} Güncelle`}
+                    >
+                      <EditIcon fontSize="small" />
+                    </IconButton>
+                    
+                    {/* Sil Butonu */}
+                    <IconButton 
+                      size="small" 
+                      color="error" 
+                      onClick={() => onDelete(user.id)}
+                      aria-label={`Kullanıcı ${user.name} Sil`}
+                    >
+                      <DeleteIcon fontSize="small" />
+                    </IconButton>
                   </TableCell>
                 </TableRow>
               ))

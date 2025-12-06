@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Ahmet",
-      "surname": "Yılmaz",
-      "email": "ahmet.yilmaz@corp.com",
-      "profession": "Yönetici",
-      "createdAt": "2024-05-15T10:30:00Z",
-      "role": "ADMIN",
-      "tcknPrefix": "123"
-    },
-    {
       "id": "2",
       "name": "Ayşe",
       "surname": "Demir",
@@ -89,36 +79,6 @@
       "createdAt": "2024-02-18T12:00:00Z",
       "role": "USER",
       "tcknPrefix": "666"
-    },
-    {
-      "id": "10",
-      "name": "Gizem",
-      "surname": "Polat",
-      "email": "gizem.polat@corp.com",
-      "profession": "Yönetici",
-      "createdAt": "2023-09-01T15:30:00Z",
-      "role": "ADMIN",
-      "tcknPrefix": "777"
-    },
-    {
-      "id": "11",
-      "name": "Hasan",
-      "surname": "Eroğlu",
-      "email": "hasan.eroglu@corp.com",
-      "profession": "Analist",
-      "createdAt": "2024-01-22T08:40:00Z",
-      "role": "USER",
-      "tcknPrefix": "888"
-    },
-    {
-      "id": "12",
-      "name": "İrem",
-      "surname": "Güneş",
-      "email": "irem.gunes@corp.com",
-      "profession": "Tasarımcı",
-      "createdAt": "2024-04-12T10:20:00Z",
-      "role": "USER",
-      "tcknPrefix": "999"
     },
     {
       "id": "13",

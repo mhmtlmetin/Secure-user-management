@@ -77,6 +77,14 @@ export const userApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ['Auth'], // Opsiyonel: Oturum açıldığında yetkiyle ilgili önbellekleri geçersiz kıl
     }),
+    deleteUser: builder.mutation<void, number>({
+    query: (id) => ({
+        url: `users/${id}`, // DELETE /users/:id
+        method: 'DELETE',
+    }),
+    // Başarılı silme sonrası tüm listeyi yenile
+    invalidatesTags: [{ type: 'Users', id: 'LIST' }], 
+}),
     // Query tipi artık UsersResult'tır.
     getUsers: builder.query<UsersResult, FilterState>({
       query: (params) => {
@@ -116,4 +124,4 @@ export const userApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetUsersQuery, useLoginMutation } = userApi;
+export const { useGetUsersQuery, useLoginMutation, useDeleteUserMutation } = userApi;
