@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { type RootState } from "../store";
 import { useGetUsersQuery, useDeleteUserMutation } from "../api/userApi";
+import { Button, CircularProgress } from "@mui/material";
 import {
   setPage,
   setSort,
@@ -9,7 +10,8 @@ import {
 } from "../features/user-management/slices/filterSlice";
 import UserDataTable from "../components/tables/userDataTable";
 import FilterPanel from "../features/user-management/components/FilterPanel";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { Margin } from "@mui/icons-material";
 
 const UsersPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -30,18 +32,19 @@ const UsersPage: React.FC = () => {
   const handlePageChange = (newPage: number) => {
     dispatch(setPage(newPage));
   };
+  const goToAddPage =()=>{
+     navigate(`/users/add`);
 
+  }
   const handleEdit = (userId: number) => {
-        // Düzenleme sayfası için uygun bir rota kullanın
-        navigate(`/users/edit/${userId}`); 
-    };
+    // Düzenleme sayfası için uygun bir rota kullanın
+    navigate(`/users/edit/${userId}`);
+  };
 
-    // Silme Handler'ı: Silme işlemini başlatır (UX için onay mekanizması eklenmeli)
-    const handleDelete = async (userId: number) => {
-      
-                await deleteUser(userId).unwrap();
-                
-    };
+  // Silme Handler'ı: Silme işlemini başlatır (UX için onay mekanizması eklenmeli)
+  const handleDelete = async (userId: number) => {
+    await deleteUser(userId).unwrap();
+  };
 
   const handleFilterChange = (key: keyof typeof filterParams, value: any) => {
     if (key !== "page" && key !== "size" && key !== "sort") {
@@ -60,7 +63,18 @@ const UsersPage: React.FC = () => {
 
   return (
     <div>
-      <h2>Kullanıcı Yönetimi Listesi</h2>
+      <div style={{ display: "flex", margin: "20px" }}>
+        <Button
+           onClick={goToAddPage}
+          variant="contained"
+          disabled={isLoading}
+          startIcon={
+            isLoading ? <CircularProgress size={20} color="inherit" /> : null
+          }
+        >
+          Kullanıcı Ekle
+        </Button>
+      </div>
       <FilterPanel filters={filterParams} onFilterChange={handleFilterChange} />
 
       <UserDataTable
@@ -73,7 +87,7 @@ const UsersPage: React.FC = () => {
         onPageChange={handlePageChange}
         onSortChange={handleSortChange}
         onEdit={handleEdit}
-            onDelete={handleDelete}
+        onDelete={handleDelete}
       />
     </div>
   );

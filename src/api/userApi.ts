@@ -28,11 +28,7 @@ export interface AuthResponse {
   user: User; // Oturum açan kullanıcının bilgileri
 }
 
-// --- Yardımcı Fonksiyon: Sorgu Parametrelerini Dönüştürme ---
 
-/**
- * FilterState nesnesini JSON-Server'ın beklediği sorgu parametrelerine dönüştürür.
- */
 const transformFilterParams = (params: FilterState): string => {
   const query: string[] = [];
   
@@ -83,6 +79,18 @@ export const userApi = baseApi.injectEndpoints({
         method: 'DELETE',
     }),
     // Başarılı silme sonrası tüm listeyi yenile
+    invalidatesTags: [{ type: 'Users', id: 'LIST' }], 
+}),
+
+addUser: builder.mutation<User, Omit<User, 'id' | 'createdAt'>>({
+    query: (newUser) => ({
+        // json-server yeni kullanıcıyı buraya ekleyecek
+        url: 'users',
+        method: 'POST',
+        body: newUser,
+    }),
+    // Önbelleği (cache) geçersiz kılma (Invalidation):
+    // Yeni kullanıcı eklenince, 'LIST' tag'i geçersiz kılınır ve getUsers query'si otomatik yenilenir.
     invalidatesTags: [{ type: 'Users', id: 'LIST' }], 
 }),
 
@@ -144,4 +152,4 @@ getUser: builder.query<User, number>({ // <Dönüş Tipi: User, Parametre Tipi: 
   }),
 });
 
-export const { useGetUsersQuery, useLoginMutation, useDeleteUserMutation, useUpdateUserMutation, useGetUserQuery } = userApi;
+export const { useGetUsersQuery, useLoginMutation, useDeleteUserMutation, useUpdateUserMutation, useGetUserQuery, useAddUserMutation } = userApi;

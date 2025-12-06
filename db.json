@@ -230,6 +230,16 @@
       "id": "28e9",
       "email": "mhmtlmetin@gmail.com",
       "password": "gygygyggy"
+    },
+    {
+      "id": "b2d1",
+      "name": "deneme",
+      "surname": "deneme",
+      "email": "mhmtlmetin@gmail.com",
+      "profession": "Geliştirici",
+      "password": "bhbhbhbhbh",
+      "role": "USER",
+      "tcknPrefix": "163"
     }
   ]
 }

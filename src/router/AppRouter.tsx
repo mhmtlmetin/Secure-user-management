@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router'; // 'react-router'dan import varsay
 import LoginPage from '../pages/LoginPage';
 import UsersPage from '../pages/UsersPage';
 import EditUserPage from '../pages/EditUserPage';
+import AddUserPage from '../pages/AddUserPage';
 import ProtectedRoute from './ProtectedRoute';
 
 const AppRouter = () => {
@@ -11,6 +12,7 @@ const AppRouter = () => {
       <Route element={<ProtectedRoute allowedRoles={['ADMIN', 'USER']} />}>
         <Route path="/users" element={<UsersPage />} />
         <Route path="/users/edit/:id" element={<EditUserPage />} />
+        <Route path="/users/add" element={<AddUserPage />} />
       </Route>
       <Route element={<ProtectedRoute allowedRoles={['ADMIN']} />}>
         <Route path="/admin/settings" element={<div>Admin Ayarları</div>} />
