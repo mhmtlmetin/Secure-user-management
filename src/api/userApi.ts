@@ -85,6 +85,26 @@ export const userApi = baseApi.injectEndpoints({
     // Başarılı silme sonrası tüm listeyi yenile
     invalidatesTags: [{ type: 'Users', id: 'LIST' }], 
 }),
+
+updateUser: builder.mutation<User, Partial<User> & Pick<User, 'id'>>({
+    query: (updatedUser) => ({
+        // PATCH /users/:id adresine isteği gönderir
+        url: `users/${updatedUser.id}`, 
+        method: 'PATCH',
+        body: updatedUser,
+    }),
+    // Önbelleği (cache) geçersiz kılma (Invalidation):
+    // Güncelleme başarılı olunca, hem LIST tag'ini hem de o ID'ye ait tekil kaydı yeniler.
+    invalidatesTags: (result, error, { id }) => [
+        { type: 'Users', id: 'LIST' },
+        { type: 'Users', id }, // Tekil kaydı da yeniler
+    ], 
+}),
+getUser: builder.query<User, number>({ // <Dönüş Tipi: User, Parametre Tipi: number>
+        query: (id) => `users/${id}`, // GET /users/:id isteği gönderir
+        // Tekil kaydı önbelleğe alır
+        providesTags: (result, error, id) => [{ type: 'Users', id }], 
+    }),
     // Query tipi artık UsersResult'tır.
     getUsers: builder.query<UsersResult, FilterState>({
       query: (params) => {
@@ -124,4 +144,4 @@ export const userApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetUsersQuery, useLoginMutation, useDeleteUserMutation } = userApi;
+export const { useGetUsersQuery, useLoginMutation, useDeleteUserMutation, useUpdateUserMutation, useGetUserQuery } = userApi;

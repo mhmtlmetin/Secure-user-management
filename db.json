@@ -85,10 +85,11 @@
       "name": "Koray",
       "surname": "Kurt",
       "email": "koray.kurt@corp.com",
-      "profession": "Geliştirici",
+      "profession": "Geliştiriciii",
       "createdAt": "2023-10-01T11:55:00Z",
-      "role": "USER",
-      "tcknPrefix": "101"
+      "role": "ADMIN",
+      "tcknPrefix": "101",
+      "password": ""
     },
     {
       "id": "14",
@@ -224,6 +225,11 @@
       "id": "95c8",
       "email": "mhmtlmetin@gmail.com",
       "password": "ssdddsdd"
+    },
+    {
+      "id": "28e9",
+      "email": "mhmtlmetin@gmail.com",
+      "password": "gygygyggy"
     }
   ]
 }
